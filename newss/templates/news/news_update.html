@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block title %}
+<title>{{ object.title }}</title>
+{% endblock title %} {% load crispy_forms_tags %} {% block content %}
+
+<form
+  class="mx-auto my-4 text-center"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %} {{ form | crispy }}
+  <div class="d-flex justify-content-center">
+    <input class="btn btn-success my-3" type="submit" value="Update" />
+  </div>
+</form>
+{% endblock content %}

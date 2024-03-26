@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+<link href="{% static 'css/med.css' %}" rel="stylesheet" />
+{% block title %}
+<title>{{ object.medicine.name }}</title>
+{% endblock title %}
+{% block content %}
+<div class="det">
+
+  <img src="{{object.medicine.thumb.url}}" >
+  <h4>Name:</h4>{{object.medicine.name}}
+  <h4>Quantity:</h4>{{object.c_quantity}}
+  <h4>Price:EGP</h4>{{object.total_price}}
+
+  <div class="btn_container"> 
+      <a href="{{ object.updateCart }}">
+        Update
+      </a>
+      <a href="{{ object.deleteCart }}">
+          Delete
+        </a>
+        <a href="{% url 'medicine:checkout' %}">
+          CheckOut
+        </a>
+
+  </div>
+</div>      
+{% endblock content %}

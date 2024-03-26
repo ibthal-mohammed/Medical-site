@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>News</title>
+{% endblock title %}
+
+
+
+
+{% block content %}
+<section class="about_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container ">
+        <h2>
+          News
+        </h2>
+      </div>
+      <div class="detail-box">
+        <div class="d-flex justify-content-center">
+          <a href="{% url 'news:news_create' %}">
+            Create
+          </a>
+        </div>
+    </div>
+      {% if news_list %}
+      {% for news in news_list %}
+      <div class="img-box">
+        <h3>Created By:{{ news.username }}</h3>
+            <br>
+        {% if news.thumb %}
+        <img src="{{ news.thumb.url }}" alt="">
+        {% else %}
+        <h3>No Image</h3>
+        {% endif %}
+      </div>
+      <div class="detail-box">
+        <h3>{{ news.title }}</h3>
+        <p>
+          {{ news.snip }}
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="{{ news.get_absolute_url }}">
+            Read More
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p>No News For Now</p>
+      {% endif %}
+    </div>
+  </section>
+
+{% endblock content %}

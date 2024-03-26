@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% block title %}
+<title>Orders</title>
+{% endblock title %}
+
+{% block content %}
+{%load static}
+<link href="{% static 'css/med.css' %}" rel="stylesheet" />
+
+{% block content %}
+
+{% if order_list %}
+{% for order in order_list %}
+{% if user == order.username %}
+<div class="del" style="margin-left: 40%;">
+    <img src="{{ order.cart.medicine.thumb.url }}" >
+
+
+    <p> Name: {{ order.cart.medicine }}</p>
+    <p>Total_Price: {{ order.cart.total_price }}</p>
+    <p>Quantity: {{ order.cart.c_quantity }}</p>
+    <p>Address: {{ order.address }}</p>
+    <p>Phone: {{ order.phone }}</p>
+  </div>
+{% endif %}    
+{% endfor %}
+{% else %}
+<h4>No Orders</h4>
+<h3> <a href="{% url 'medicine:medicine_list' %}">
+    Go To Shop
+  </a></h3>
+{% endif %}
+
+{% endblock content %}

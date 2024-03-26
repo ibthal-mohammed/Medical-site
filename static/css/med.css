@@ -1,0 +1,134 @@
+.hero_area {
+    height: fit-content;  
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.medicines_list {
+    position: relative;
+    margin-left: 36%; 
+    margin-top: -63px;
+}
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: -24px;
+    }
+    .health_section a {
+        display: inline-block;
+        padding: 10px 45px;
+        background-color: #2c2c2c;
+        border: 1px solid #2c2c2c;
+        color: #ffffff;
+        margin-top: 12px;
+    }
+    .detail-box {
+        margin-bottom: 42px;}
+h3{
+    text-align: center;
+    margin-top: 29px;
+}
+
+    form {
+        margin: 42px;
+    }
+    input {
+        border-radius: 5px;
+        padding-left: 22px;
+        padding-right: 22px;
+        border-color: whitesmoke;
+    }
+    select {
+            word-wrap: normal;
+            padding-left: 45px;
+            margin-right: 91px;
+            margin-left: 14px;
+    }
+    input:hover{
+        background-color:#33b3da;
+        }
+.add_cart {
+            height: 33.8vh;
+        }
+        .container input {
+            font-size: 15px;
+            width: 66%;
+            margin-bottom: 17px;
+            padding: 8px 14px;
+            outline: none;
+            border-radius: 28px;
+            border-color: azure;
+        }
+        .btn {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 40% 0 15% 19%;
+            text-align: center;
+            background: #1ea5ac;
+            border: 2px solid #10e7f4;
+            padding: 3% 3%;
+            outline: none;
+            color: black;
+            border-radius: 25px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .btn :hover {
+            background:#17dee9;
+        }
+.container{
+        width:50%;
+}
+textarea {
+    overflow: overlay;
+    resize: initial;
+    border-radius: 18px;
+    font-size: 14px;
+    padding-left: 83px;
+}
+h1{
+    margin-right: 285px;
+}
+.col-md-3 {
+    margin-right: 162px;}
+.det {
+        margin-left: 18%;
+        margin-top: 39px;
+        display: flex;
+        align-items: flex-start;
+        
+        flex-direction: column;
+}
+.btn_containe a{
+    border: 0;
+    background: none;
+    display: inline;
+    text-align: center;
+    background: #1ea5ac;
+    border: 2px solid #10e7f4;
+    padding: 5px 13px;
+    outline: none;
+    color: black;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+#a3{
+    border: 0;
+    background: none;
+    display: inline;
+    text-align: center;
+    background: #1ea5ac;
+    border: 2px solid #10e7f4;
+    padding: 8px 56px;
+    outline: none;
+    color: black;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
+}

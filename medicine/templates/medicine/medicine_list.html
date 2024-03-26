@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Medicine</title>
+{% endblock title %}
+
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css/med.css' %}" rel="stylesheet" />
+<div class="medicines_list" >
+  <section class="health_section layout_padding">
+      <div class="health_carousel-container">
+        <h2 class="text-uppercase">
+          Medicines
+        </h2>
+        <div class="carousel-wrap layout_padding2">
+        <div >
+            <div class="item">
+              {% if med_list %}
+                  {% for med in med_list %}
+                  <div class="img-box">
+                    <img src="{{ med.thumb.url }}" alt="">
+                  </div>
+                  {% if med.quantity %}
+                <div class="btn_container"> 
+                  <a href="{% url 'medicine:add_to_cart' med.id %}">
+                    Buy Now
+                  </a>
+                </div>
+                <div class="detail-box">
+                  <div class="star_container">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                  </div>
+                  
+                  <div class="text">
+
+                    <h6>
+                      {{ med.name }}
+                    </h6>
+                    <h6 class="price">
+                      <span style="color:black">
+                        Price:
+                      </span>
+                      {{ med.price }}EGP
+                    </h6>
+                    {% else %}
+                    <h6>Not Available</h6>
+                    {% endif %}
+                  </div>
+                </div>
+              
+                {% endfor %}
+            </div>
+              {% else %}
+              <h3>No Medicines</h3>
+              {% endif %}
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+    
+  </section>
+</div>
+
+{% endblock content %}

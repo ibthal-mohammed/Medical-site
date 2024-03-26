@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>{{ object.title }}</title>
+{% endblock title %}
+
+{% block content %}
+<section class="about_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container ">
+        <h2>
+            {{ object.title }}
+        </h2>
+      </div>
+     
+      <div class="img-box">
+        {% if news.thumb %}
+        <img src="{{ news.thumb.url }}" alt="">
+        {% else %}
+        <h3>No Image</h3>
+        {% endif %}
+      </div>
+      <div class="detail-box">
+            
+            <p>
+            {{ object.body}}
+            </p>
+            {% if object.username == user %}
+            <div class="d-flex justify-content-center">
+                <a href="{{ object.update_news }}">
+                  Edit
+                </a>
+              </div>
+              <div class="d-flex justify-content-center">
+                <a href="{{ object.delete_news }}">
+                  Delete
+                </a>
+              </div>
+              {% endif %}
+      </div>
+      
+
+    </div>
+  </section>
+
+{% endblock content %}
